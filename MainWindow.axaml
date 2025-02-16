@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Books.MainWindow"
+        Title="Books">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" Orientation="Vertical">
+            <AutoCompleteBox Watermark="Search by title" x:Name="Search" SelectionChanged="Search_OnSelectionChanged"></AutoCompleteBox>
+            <ListBox x:Name="BooksList" Grid.Column="0" SelectionChanged="BooksList_OnSelectionChanged" ></ListBox>
+            <Button x:Name="AddBookButton" Content="Add Book" Grid.Column="0" Margin="5" Width="100"></Button>
+        </StackPanel>
+        <ContentControl x:Name="MainContent" Grid.Column="1" ></ContentControl>
+    </Grid>
+</Window>
